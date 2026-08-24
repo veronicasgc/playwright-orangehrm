@@ -55,31 +55,32 @@ playwright-orangeHRM/
 ├── package-lock.json
 ├── playwright.config.ts
 └── tsconfig.json
+```
 
 ---
 
-🧩 Page Object Model
+## 🧩 Page Object Model
 
 O projeto utiliza o padrão Page Object Model (POM) para separar a lógica de interação com a aplicação dos cenários de teste.
 
 Pages
 
-- LoginPage
+- **LoginPage**
 
 Login na aplicação
 Preenchimento de username e password
 
-- HomePage
+- **HomePage**
 
 Navegação para o módulo PIM
 
-- EmployeePage
+- **EmployeePage**
 
 Cadastro de funcionários
 Criação de credenciais de acesso
 Recuperação do Employee ID
 
-- EmployeeListPage
+- **EmployeeListPage**
 
 Pesquisa de funcionários
 Reset dos filtros
@@ -90,61 +91,63 @@ Essa organização permite reutilizar os métodos entre diferentes cenários e f
 
 ## 🧪 Cenários automatizados
 
-🔐 Login
-Login com sucesso
-Login com username inválido
-Login com password inválido
-Validação de username obrigatório
-Validação de password obrigatório
-Validação de confirmação de password
-Validação de passwords diferentes
+🔐 **Login**
+- Login com sucesso
+- Login com username inválido
+- Login com password inválido
+- Validação de username obrigatório
+- Validação de password obrigatório
+- Validação de confirmação de password
+- Validação de passwords diferentes
 
-👤 Employee
-Cadastro de um novo funcionário
-Validação de nome obrigatório
-Validação de sobrenome obrigatório
-Criação de funcionário com login
-Validação de username obrigatório
-Validação de password obrigatório
-Validação de confirmação de password obrigatório
-Validação de passwords diferentes
+👤 **Employee**
+- Cadastro de um novo funcionário
+- Validação de nome obrigatório
+- Validação de sobrenome obrigatório
+- Criação de funcionário com login
+- Validação de username obrigatório
+- Validação de password obrigatório
+- Validação de confirmação de password obrigatório
+- Validação de passwords diferentes
 
-📋 Employee List
-Pesquisa de funcionário pelo nome
-Reset dos campos de pesquisa
-Validação de pesquisa com ID inválido
-Edição de dados do funcionário
-Exclusão de funcionário
+📋 **Employee List**
+- Pesquisa de funcionário pelo nome
+- Reset dos campos de pesquisa
+- Validação de pesquisa com ID inválido
+- Edição de dados do funcionário
+- Exclusão de funcionário
 
 Observação: o cenário de pesquisa de funcionário pelo ID gerado dinamicamente foi retirado da suíte por depender de um ambiente demo público e compartilhado, no qual os registros podem ser alterados por outros usuários durante a execução dos testes.
 
-🔎 Estratégias de localização
+## 🔎 Estratégias de localização
 
 Durante o desenvolvimento foram utilizadas diferentes estratégias de locators do Playwright, incluindo:
 
- - getByRole()
- - getByText()
- - getByPlaceholder()
- - locator()
+ - `getByRole()`
+ - `getByText()`
+ - `getByPlaceholder()`
+ - `locator()`
 
 Também foram utilizados elementos com diferentes posições dentro da página quando necessário:
 
-getByRole("textbox").nth(2)
+- `getByRole("textbox").nth(2)`
 
 A escolha dos locators foi feita considerando a estrutura e acessibilidade dos elementos disponíveis na aplicação.
 
-✅ Assertions
+✅ **Assertions**
 
 Os testes utilizam diferentes tipos de assertions para validar o comportamento da aplicação:
 
-toBeVisible()
-toContainText()
-toHaveText()
-toHaveValue()
+- toBeVisible()
+- toContainText()
+- toHaveText()
+- toHaveValue()
 
 As assertions são utilizadas para verificar tanto resultados positivos quanto mensagens de validação e erros.
 
-▶️ Instalação
+---
+
+## ▶️ Instalação
 
 Clone o repositório:
 
@@ -162,7 +165,7 @@ Instale os browsers do Playwright:
 
 npx playwright install
 
-🧪 Executando os testes
+## 🧪 Executando os testes
 
 Executar toda a suíte:
 
@@ -176,36 +179,43 @@ Executar os testes com o navegador visível:
 
 npx playwright test --project=chromium --headed
 
-📊 Relatório de testes
+---
+
+## 📊 Relatório de testes
 
 Após a execução da suíte, o Playwright pode gerar um relatório HTML.
 
 Para abrir o último relatório:
 
 npx playwright show-report
-Resultado atual
-19 tests passed
 
-🛠️ Aprendizados
+### Resultado Atual
+A suíte atual possui **19 testes automatizados**, cobrindo cenários positivos e negativos dos módulos de Login, Employee e Employee List.
+
+---
+
+## 🛠️ Aprendizados
 
 Durante o desenvolvimento deste projeto foram praticados conceitos como:
 
-Estruturação de projetos Playwright
-TypeScript aplicado à automação
-Page Object Model
-Locators
-Assertions
-Hooks (beforeEach)
-Testes positivos e negativos
-Dados dinâmicos
-Debugging com Playwright Inspector
-Codegen
-Análise de falhas
-HTML Reports
-Organização de testes E2E
-Controle de versão com Git
+- Estruturação de projetos Playwright
+- TypeScript aplicado à automação
+- Page Object Model
+- Locators
+- Assertions
+- Hooks (beforeEach)
+- Testes positivos e negativos
+- Geração e utilização de dados dinâmicos
+- Debugging com Playwright Inspector
+- Codegen
+- Análise de falhas
+- HTML Reports
+- Organização de testes E2E
+- Controle de versão com Git
 
-📌 Próximos passos
+---
+
+## 📌 Próximos passos
 
 Este projeto representa uma introdução prática à automação E2E com Playwright.
 
@@ -215,12 +225,16 @@ Os próximos projetos terão como objetivo explorar outras áreas de QA, incluin
 - Automação de API
 - Testes de regressão
 - Testes de performance
-- Testes de carga e estresse
+- Testes de performance
+- Testes de carga
+- Testes de estresse
 - Integração com CI/CD
 - GitHub Actions
 - Testes de aplicações baseadas em Inteligência Artificial
 
-👩‍💻 Sobre
+---
+
+## 👩‍💻 Sobre
 
 Projeto desenvolvido por Verônica Silveira como parte do processo de aprendizado e construção de portfólio na área de Quality Assurance e Automação de Testes.
 
