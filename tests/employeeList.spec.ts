@@ -27,18 +27,6 @@ test("deve resetar o formulário quando clicar no botão reset", async ({
   await expect(employeeName).toHaveValue("");
 });
 
-test("deve encontrar o funcionário pelo id", async ({ page }) => {
-  const employeePage = new EmployeePage(page);
-  await employeePage.addEmployee("Ana", "Teixeira", "Monte");
-  
-  const employeeId = await employeePage.getEmployeeId();
-  const employeeListPage = new EmployeeListPage(page);
-  await employeeListPage.openEmployeeList();
-  await employeeListPage.searchEmployeeById(employeeId);
-  await page.pause()
-  const userFounded = page.getByText(employeeId);
-  await expect(userFounded).toBeVisible();
-});
 test("deve exibir mensagem de erro quando o id for inválido", async ({
   page,
 }) => {

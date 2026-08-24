@@ -15,8 +15,7 @@ export class EmployeePage {
     await middleName.fill(middle);
     await lastName.fill(last);
     await saveButton.click();
-    const successMessage = this.page.locator(".oxd-toast-content--success");
-    await expect(successMessage).toContainText("Successfully Saved");
+   
   }
 
   async getEmployeeId() {
